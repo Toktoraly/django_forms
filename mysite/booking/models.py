@@ -20,6 +20,7 @@ class Booking(models.Model):
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
     diagnoz = models.ForeignKey(Diagnoz,on_delete=models.CASCADE,null=True)
+    active = models.BooleanField(default=True)
 
     def __str__(self):
         return "{} - {}".format(self.client,self.diagnoz)

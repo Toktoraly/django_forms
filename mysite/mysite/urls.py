@@ -16,15 +16,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from doctor.views import doctor,doctor_detail
-from client.views import client
+from client.views import client,client_detail
 from home.views import index
 from django.conf import settings
 from django.conf.urls.static import static
+from booking.views import booking, booking_detail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", index),
     path('doctor/', doctor),
     path('client/', client),
-    path('doctor/<int:id>/',doctor_detail)
+    path('doctor/<int:id>/',doctor_detail),
+    path('client/<int:id>/',client_detail),
+    path ("booking/", booking),
+    path ("booking/<int:id>",booking_detail),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

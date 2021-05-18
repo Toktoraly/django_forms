@@ -1,0 +1,8 @@
+{% extends 'base.html' %} 
+{% block container %}
+<h1>
+    {{client.name}} - {{client.surname}}
+</h1>
+<img class="w-100" src="{{client.photo.url}}">
+
+{% endblock container %}

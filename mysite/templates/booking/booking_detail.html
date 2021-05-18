@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block container %}
+    <h1>Booking - {{booking.id}}</h1>
+
+    <div>
+        <h2>{{booking.client}} {{booking.client.age}}</h2>
+    </div>
+    <div>
+        <h2>
+            {{booking.doctor}} {{booking.doctor.age}}
+        </h2>
+        <img class="w-25" src="{{booking.doctor.photo.url}}" >
+        <p>
+            {{booking.doctor.profes}}
+        </p>
+    </div>
+    <p>
+    {{booking.diagnoz}}
+    </p>
+
+{% endblock container %}
