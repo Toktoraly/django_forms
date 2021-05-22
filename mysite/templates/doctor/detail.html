@@ -1,8 +1,12 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block container %}
 <h1>
     {{doctor.name}} - {{doctor.surname}}
 </h1>
-<img class="w-100" src="{{doctor.photo.url}}">
+
+{% if doctor.photo %}
+    <img class="w-100" src="{{doctor.photo.url}}">
+{% endif %}
+
 
 {% endblock container %}

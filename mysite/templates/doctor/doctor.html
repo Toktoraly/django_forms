@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block container%}
-        <h1>Clients!</h1>
+        <h1>Doctor!</h1>
 
         <div class="row mb-4 mt-4">
             {% for doctor in doctors%}
@@ -23,10 +23,16 @@
                         </div>
                     </div>
                 </div>
+                           
             {% empty %}
                 <div class="alert alert-success">
                     This is page is empty
                 </div>
             {% endfor %}
         </div>
+        <form action="/doctor/" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{doctor_form.as_p}}
+           <button>Save</button>
+            </form>
 {% endblock container%}
